@@ -1,5 +1,6 @@
 const WebSocket = require('ws')
-const wss = new WebSocket.Server({ port: 10000 })
+const PORT = process.env.PORT || 3000;
+const wss = new WebSocket.Server({ port: PORT })
 wss.on('connection', ws => {
   ws.on('message', message => {
     console.log(`Received message => ${message}`)
